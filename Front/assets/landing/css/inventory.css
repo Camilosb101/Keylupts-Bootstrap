@@ -1,0 +1,215 @@
+.btn-agregar-producto {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+    color: white;
+    font-weight: 600;
+}
+
+.btn-agregar-producto:hover,
+.btn-agregar-producto:focus-visible {
+    background-color: #d97716;
+    border-color: #d97716;
+    color: white;
+}
+
+.tabla-inventario-contenedor {
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid #e4e6eb;
+    border-radius: 1rem;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inventario-vacio {
+    padding: 2rem;
+    text-align: center;
+}
+
+.tabla-inventario-scroll {
+    overflow-x: auto;
+}
+
+.tabla-inventario {
+    width: 100%;
+    min-width: 920px;
+    margin: 0;
+    border-collapse: collapse;
+    color: #253044;
+}
+
+.tabla-inventario th,
+.tabla-inventario td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e4e6eb;
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.tabla-inventario th {
+    background-color: #f8f9fa;
+    color: #526074;
+    font-weight: 700;
+}
+
+.tabla-inventario tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.producto-tabla {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 290px;
+}
+
+.producto-tabla-imagen {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+.producto-tabla-nombre {
+    font-weight: 700;
+}
+
+.precio-venta {
+    color: #f05a00;
+    font-weight: 700;
+}
+
+.stock-bajo {
+    color: #dc3545;
+    font-weight: 700;
+}
+
+.stock-alerta {
+    margin-left: 0.35rem;
+    color: #dc3545;
+}
+
+.estado-producto {
+    display: inline-block;
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    background-color: #d1fae5;
+    color: #087443;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.estado-producto.inactivo {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
+
+.acciones-producto {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.accion-producto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 1.25rem;
+}
+
+.accion-editar {
+    color: #0d6efd;
+}
+
+.accion-eliminar {
+    color: #dc3545;
+}
+
+.modal-abierto {
+    overflow: hidden;
+}
+
+.modal-inventario {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.modal-inventario.visible {
+    display: flex;
+}
+
+.modal-inventario-contenido {
+    width: min(100%, 720px);
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+}
+
+.modal-inventario-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.modal-inventario-encabezado h2 {
+    margin: 0;
+    color: #253044;
+    font-size: 1.5rem;
+}
+
+.modal-inventario-cuerpo {
+    padding: 1.5rem;
+}
+
+.modal-inventario-cuerpo .form-label {
+    color: #526074;
+    font-weight: 600;
+}
+
+.modal-inventario-cuerpo .form-control,
+.modal-inventario-cuerpo .form-select {
+    min-height: 52px;
+    border-color: #d9dee5;
+    border-radius: 1rem;
+}
+
+.modal-inventario-cuerpo textarea.form-control {
+    min-height: 108px;
+}
+
+.modal-inventario-acciones {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 576px) {
+    .modal-inventario-encabezado,
+    .modal-inventario-cuerpo {
+        padding: 1rem;
+    }
+
+    .modal-inventario-acciones {
+        flex-direction: column-reverse;
+    }
+
+    .modal-inventario-acciones .btn {
+        width: 100%;
+    }
+}

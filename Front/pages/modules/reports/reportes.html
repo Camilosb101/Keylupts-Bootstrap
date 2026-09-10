@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes | KeyluPets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../../../assets/landing/css/admin.css" rel="stylesheet">
+    <link href="../../../assets/landing/css/reportes.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar barra-superior sticky-top w-100 bg-white d-flex justify-content-start align-items-center gap-2 p-2">
+        <a href="../../roles/admin.html" class="d-flex align-items-center gap-2 text-dark text-decoration-none"
+        aria-label="Inicio" title="Inicio">
+            <img src="../../../assets/landing/img/Icon_Huella.png" alt="Logo"
+            width="40"
+            height="40"
+            class="d-block">
+            <span class="d-flex flex-column align-items-start">
+                <span>𝗞𝗲𝘆𝗹𝘂𝗽𝗲𝘁𝘀</span>
+                <small class="text-secondary">Panel administrativo</small>
+            </span>
+        </a>
+
+        <a href="../../company/login.html" class="btn btn-outline-dark rounded-pill ms-auto"
+        aria-label="Ver tienda" title="Ver tienda">
+            <i class="bi bi-shop" aria-hidden="true"></i>
+            Ver tienda
+        </a>
+
+        <span class="text-dark fs-6 me-n6" aria-label="Tipo de usuario" title="Tipo de usuario">
+            Admin Keylupets
+        </span>
+
+        <button type="button" class="btn bg-transparent text-danger fs-6">
+            <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+            𝘊𝘦𝘳𝘳𝘢𝘳 𝘚𝘦𝘴𝘪𝘰𝘯
+        </button>
+    </div>
+
+    <div class="admin-layout">
+        <aside class="panel-navegacion" aria-label="Navegacion administrativa">
+            <a href="../../roles/admin.html#panel-control" class="opcion-navegacion">
+                <span class="emoji-navegacion" aria-hidden="true">📊</span>
+                <span>Panel de control</span>
+            </a>
+            <a href="../inventory/inventory.html" class="opcion-navegacion">
+                <span class="emoji-navegacion" aria-hidden="true">📦</span>
+                <span>Inventario</span>
+            </a>
+            <a href="../order/pedidos.html" class="opcion-navegacion">
+                <span class="emoji-navegacion" aria-hidden="true">🛒</span>
+                <span>Pedidos</span>
+            </a>
+            <a href="../users/perfiles.html" class="opcion-navegacion">
+                <span class="emoji-navegacion" aria-hidden="true">👤</span>
+                <span>Perfiles de usuario</span>
+            </a>
+            <a href="reportes.html" class="opcion-navegacion activa" aria-current="page">
+                <span class="emoji-navegacion" aria-hidden="true">📈</span>
+                <span>Reportes</span>
+            </a>
+        </aside>
+
+        <main class="admin-contenido">
+            <div class="reportes-encabezado">
+                <h1 class="titulo-panel">Reportes e Historial</h1>
+                <div class="reportes-exportacion" aria-label="Exportar reportes">
+                    <button type="button" class="btn-exportar btn-pdf">
+                        <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+                        PDF
+                    </button>
+                    <button type="button" class="btn-exportar btn-excel">
+                        <i class="bi bi-download" aria-hidden="true"></i>
+                        Excel
+                    </button>
+                </div>
+            </div>
+
+            <section class="resumen-reportes" aria-label="Resumen de reportes">
+                <article class="tarjeta-reporte">
+                    <div class="tarjeta-reporte-encabezado">
+                        <span>Ventas Totales</span>
+                        <i class="bi bi-graph-up-arrow icono-ventas" aria-hidden="true"></i>
+                    </div>
+                    <strong>--</strong>
+                    <small>Sin datos registrados</small>
+                </article>
+
+                <article class="tarjeta-reporte">
+                    <div class="tarjeta-reporte-encabezado">
+                        <span>Entradas de Stock</span>
+                        <i class="bi bi-arrow-down-right icono-entradas" aria-hidden="true"></i>
+                    </div>
+                    <strong>--</strong>
+                    <small>Sin datos registrados</small>
+                </article>
+
+                <article class="tarjeta-reporte">
+                    <div class="tarjeta-reporte-encabezado">
+                        <span>Salidas de Stock</span>
+                        <i class="bi bi-arrow-up-right icono-salidas" aria-hidden="true"></i>
+                    </div>
+                    <strong>--</strong>
+                    <small>Sin datos registrados</small>
+                </article>
+            </section>
+
+            <div class="pestanas-reportes" role="tablist" aria-label="Vistas de reportes">
+                <button type="button" class="pestana-reporte activa" role="tab" aria-selected="true">Historial de Ventas</button>
+                <button type="button" class="pestana-reporte" role="tab" aria-selected="false">Movimientos de Stock</button>
+            </div>
+
+            <section class="tabla-reportes-contenedor" aria-labelledby="titulo-historial-ventas">
+                <h2 id="titulo-historial-ventas" class="visually-hidden">Historial de Ventas</h2>
+                <div class="tabla-reportes-scroll">
+                    <table class="tabla-reportes">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID Pedido</th>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Artículos</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Pago</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="6" class="tabla-reportes-vacia">No hay datos de ventas registrados.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

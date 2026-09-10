@@ -1,0 +1,60 @@
+.pedidos-encabezado-pagina {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.filtros-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.filtro-pedido {
+    padding: 0.6rem 1.25rem;
+    background-color: white;
+    border: 1px solid #d9dce1;
+    border-radius: 999px;
+    color: #526074;
+    font-weight: 600;
+}
+
+.filtro-pedido:hover,
+.filtro-pedido.activo {
+    background-color: #f28c28;
+    border-color: #f28c28;
+    color: white;
+}
+
+.pedidos-vacio {
+    display: flex;
+    min-height: 260px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid #e4e6eb;
+    border-radius: 1rem;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+    color: #526074;
+    text-align: center;
+}
+
+.pedidos-vacio-icono {
+    margin-bottom: 1rem;
+    color: #f28c28;
+    font-size: 3rem;
+}
+
+.pedidos-vacio h2 {
+    margin-bottom: 0.5rem;
+    color: #253044;
+    font-size: 1.35rem;
+}
+
+.pedidos-vacio p {
+    margin: 0;
+}

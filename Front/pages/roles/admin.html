@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Admin | KeyluPets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../../assets/landing/css/admin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar barra-superior sticky-top w-100 bg-white d-flex justify-content-start align-items-center gap-2 p-2">
+        <a href="../company/login.html" class="d-flex align-items-center gap-2 text-dark text-decoration-none"
+        aria-label="Inicio" title="Inicio">
+            <img src="../../assets/landing/img/Icon_Huella.png" alt="Logo"
+            width="40"
+            height="40"
+            class="d-block">
+            <span class="d-flex flex-column align-items-start">
+                <span>𝗞𝗲𝘆𝗹𝘂𝗽𝗲𝘁𝘀</span>
+                <small class="text-secondary">Panel administrativo</small>
+            </span>
+        </a>
+
+        <a href="../company/login.html" class="btn btn-outline-dark rounded-pill ms-auto"
+        aria-label="Ver tienda" title="Ver tienda">
+        <i class="bi bi-shop" aria-hidden="true"></i>
+            Ver tienda
+        </a>
+
+
+
+
+        <span class="text-dark fs-6 me-n6" aria-label="Tipo de usuario" title="Tipo de usuario">
+            Admin Keylupets
+        </span>
+
+
+        <button type="button" class="btn bg-transparent text-danger fs-6 ">
+            <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+            𝘊𝘦𝘳𝘳𝘢𝘳 𝘚𝘦𝘴𝘪𝘰𝘯
+        </button>
+
+        
+    </div>
+
+    <div class="admin-layout">
+        <aside class="panel-navegacion" aria-label="Navegacion administrativa">
+            <a href="admin.html#panel-control" class="opcion-navegacion activa">
+                <span class="emoji-navegacion" aria-hidden="true">📊</span>
+                <span>Panel de control</span>
+            </a>
+            <a href="../modules/inventory/inventory.html" class="opcion-navegacion">
+                <span class="emoji-navegacion" aria-hidden="true">📦</span>
+                <span>Inventario</span>
+            </a>
+            <a href="../modules/order/pedidos.html" class="opcion-navegacion">
+                <span class="emoji-navegacion" aria-hidden="true">🛒</span>
+                <span>Pedidos</span>
+            </a>
+            <a href="../modules/users/perfiles.html" class="opcion-navegacion">
+                <span class="emoji-navegacion" aria-hidden="true">👤</span>
+                <span>Perfiles de usuario</span>
+            </a>
+            <a href="../modules/reports/reportes.html" class="opcion-navegacion">
+                <span class="emoji-navegacion" aria-hidden="true">📈</span>
+                <span>Reportes</span>
+            </a>
+        </aside>
+
+        <main class="admin-contenido" id="panel-control">
+            <h1 class="titulo-panel">Panel Principal</h1>
+
+            <section class="resumen-panel" aria-label="Resumen del inventario y pedidos">
+                <article class="tarjeta-resumen">
+                    <div class="resumen-encabezado">
+                        <h2>Total Productos</h2>
+                        <i class="bi bi-box-seam icono-productos" aria-hidden="true"></i>
+                    </div>
+                    <strong class="resumen-numero" id="total-productos">0</strong>
+                </article>
+
+                <article class="tarjeta-resumen">
+                    <div class="resumen-encabezado">
+                        <h2>Pedidos Pendientes</h2>
+                        <i class="bi bi-bag icono-pedidos" aria-hidden="true"></i>
+                    </div>
+                    <strong class="resumen-numero" id="pedidos-pendientes">0</strong>
+                </article>
+
+                <article class="tarjeta-resumen tarjeta-alerta">
+                    <div class="resumen-encabezado">
+                        <h2>Stock Bajo</h2>
+                        <i class="bi bi-exclamation-triangle icono-stock" aria-hidden="true"></i>
+                    </div>
+                    <strong class="resumen-numero" id="stock-bajo">0</strong>
+                </article>
+
+                <article class="tarjeta-resumen">
+                    <div class="resumen-encabezado">
+                        <h2>Por Vencer Pronto</h2>
+                        <i class="bi bi-clock icono-vencimiento" aria-hidden="true"></i>
+                    </div>
+                    <strong class="resumen-numero" id="por-vencer">0</strong>
+                </article>
+            </section>
+
+            <section class="alerta-stock" role="alert">
+                <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+                <h2>Alerta de Stock Bajo</h2>
+            </section>
+
+            <section class="pedidos-recientes" aria-label="Pedidos recientes">
+                <div class="pedidos-encabezado">
+                    <i class="bi bi-bell" aria-hidden="true"></i>
+                    <h2>Pedidos Recientes</h2>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const leerDatos = (clave) => {
+            try {
+                return JSON.parse(localStorage.getItem(clave)) || [];
+            } catch (error) {
+                return [];
+            }
+        };
+
+        const actualizarResumen = () => {
+            const productos = leerDatos('productos');
+            const pedidos = leerDatos('pedidos');
+            const fechaLimite = Date.now() + (30 * 24 * 60 * 60 * 1000);
+
+            const totalProductos = productos.length;
+            const pedidosPendientes = pedidos.filter((pedido) =>
+                pedido.estado?.toLowerCase() === 'pendiente'
+            ).length;
+            const stockBajo = productos.filter((producto) =>
+                Number(producto.stock) <= Number(producto.stockMinimo ?? 5)
+            ).length;
+            const porVencer = productos.filter((producto) => {
+                const fechaVencimiento = new Date(producto.fechaVencimiento).getTime();
+                return fechaVencimiento >= Date.now() && fechaVencimiento <= fechaLimite;
+            }).length;
+
+            document.querySelector('#total-productos').textContent = totalProductos;
+            document.querySelector('#pedidos-pendientes').textContent = pedidosPendientes;
+            document.querySelector('#stock-bajo').textContent = stockBajo;
+            document.querySelector('#por-vencer').textContent = porVencer;
+        };
+
+        actualizarResumen();
+        window.addEventListener('storage', actualizarResumen);
+        window.setInterval(actualizarResumen, 30000);
+    </script>
+</body>
+</html>

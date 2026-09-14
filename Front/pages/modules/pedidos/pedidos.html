@@ -23,20 +23,20 @@
             </span>
         </a>
 
-        <a href="../../company/login.html" class="btn btn-outline-dark rounded-pill ms-auto"
-        aria-label="Ver tienda" title="Ver tienda">
+            <a href="../../company/catalogo-admin.html" class="btn btn-outline-dark rounded-pill ms-auto"
+        aria-label="Ver catálogo" title="Ver catálogo">
         <i class="bi bi-shop" aria-hidden="true"></i>
-            Ver tienda
+            Ver catálogo
         </a>
 
         <span class="text-dark fs-6 me-n6" aria-label="Tipo de usuario" title="Tipo de usuario">
             Admin Keylupets
         </span>
 
-        <button type="button" class="btn bg-transparent text-danger fs-6">
+        <a href="../../company/catalogo-admin.html" class="btn bg-transparent text-danger fs-6" aria-label="Cerrar sesión" title="Cerrar sesión">
             <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
             𝘊𝘦𝘳𝘳𝘢𝘳 𝘚𝘦𝘴𝘪𝘰𝘯
-        </button>
+        </a>
     </div>
 
     <div class="admin-layout">
@@ -53,11 +53,11 @@
                 <span class="emoji-navegacion" aria-hidden="true">🛒</span>
                 <span>Pedidos</span>
             </a>
-            <a href="../../roles/admin.html#perfiles-usuario" class="opcion-navegacion">
+            <a href="../users/perfiles.html" class="opcion-navegacion">
                 <span class="emoji-navegacion" aria-hidden="true">👤</span>
                 <span>Perfiles de usuario</span>
             </a>
-            <a href="../../roles/admin.html#reportes" class="opcion-navegacion">
+            <a href="../reports/reportes.html" class="opcion-navegacion">
                 <span class="emoji-navegacion" aria-hidden="true">📈</span>
                 <span>Reportes</span>
             </a>
@@ -69,10 +69,10 @@
             </div>
 
             <div class="filtros-pedidos" role="group" aria-label="Filtrar pedidos">
-                <button type="button" class="filtro-pedido activo" aria-pressed="true">Todos</button>
-                <button type="button" class="filtro-pedido" aria-pressed="false">Pendientes</button>
-                <button type="button" class="filtro-pedido" aria-pressed="false">Completados</button>
-                <button type="button" class="filtro-pedido" aria-pressed="false">Vencidos</button>
+                <a href="pedidos.html" class="filtro-pedido activo" aria-current="page">Todos</a>
+                <a href="pedidos.html?estado=pendientes" class="filtro-pedido">Pendientes</a>
+                <a href="pedidos.html?estado=completados" class="filtro-pedido">Completados</a>
+                <a href="pedidos.html?estado=vencidos" class="filtro-pedido">Vencidos</a>
             </div>
 
             <section class="pedidos-vacio" aria-labelledby="titulo-pedidos-vacio">

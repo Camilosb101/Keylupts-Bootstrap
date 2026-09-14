@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="navbar barra-superior sticky-top w-100 bg-white d-flex justify-content-start align-items-center gap-2 p-2">
-        <a href="../company/login.html" class="d-flex align-items-center gap-2 text-dark text-decoration-none"
+        <a href="../company/catalogo-admin.html" class="d-flex align-items-center gap-2 text-dark text-decoration-none"
         aria-label="Inicio" title="Inicio">
             <img src="../../assets/landing/img/Icon_Huella.png" alt="Logo"
             width="40"
@@ -21,10 +21,10 @@
             </span>
         </a>
 
-        <a href="../company/login.html" class="btn btn-outline-dark rounded-pill ms-auto"
-        aria-label="Ver tienda" title="Ver tienda">
+        <a href="../company/catalogo-admin.html" class="btn btn-outline-dark rounded-pill ms-auto"
+        aria-label="Ver catálogo" title="Ver catálogo">
         <i class="bi bi-shop" aria-hidden="true"></i>
-            Ver tienda
+            Ver catálogo
         </a>
 
 
@@ -35,10 +35,10 @@
         </span>
 
 
-        <button type="button" class="btn bg-transparent text-danger fs-6 ">
+        <a href="../company/catalogo-admin.html" class="btn bg-transparent text-danger fs-6" aria-label="Cerrar sesión" title="Cerrar sesión">
             <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
             𝘊𝘦𝘳𝘳𝘢𝘳 𝘚𝘦𝘴𝘪𝘰𝘯
-        </button>
+        </a>
 
         
     </div>
@@ -53,7 +53,7 @@
                 <span class="emoji-navegacion" aria-hidden="true">📦</span>
                 <span>Inventario</span>
             </a>
-            <a href="../modules/order/pedidos.html" class="opcion-navegacion">
+            <a href="../modules/pedidos/pedidos.html" class="opcion-navegacion">
                 <span class="emoji-navegacion" aria-hidden="true">🛒</span>
                 <span>Pedidos</span>
             </a>
@@ -118,41 +118,5 @@
         </main>
     </div>
 
-    <script>
-        const leerDatos = (clave) => {
-            try {
-                return JSON.parse(localStorage.getItem(clave)) || [];
-            } catch (error) {
-                return [];
-            }
-        };
-
-        const actualizarResumen = () => {
-            const productos = leerDatos('productos');
-            const pedidos = leerDatos('pedidos');
-            const fechaLimite = Date.now() + (30 * 24 * 60 * 60 * 1000);
-
-            const totalProductos = productos.length;
-            const pedidosPendientes = pedidos.filter((pedido) =>
-                pedido.estado?.toLowerCase() === 'pendiente'
-            ).length;
-            const stockBajo = productos.filter((producto) =>
-                Number(producto.stock) <= Number(producto.stockMinimo ?? 5)
-            ).length;
-            const porVencer = productos.filter((producto) => {
-                const fechaVencimiento = new Date(producto.fechaVencimiento).getTime();
-                return fechaVencimiento >= Date.now() && fechaVencimiento <= fechaLimite;
-            }).length;
-
-            document.querySelector('#total-productos').textContent = totalProductos;
-            document.querySelector('#pedidos-pendientes').textContent = pedidosPendientes;
-            document.querySelector('#stock-bajo').textContent = stockBajo;
-            document.querySelector('#por-vencer').textContent = porVencer;
-        };
-
-        actualizarResumen();
-        window.addEventListener('storage', actualizarResumen);
-        window.setInterval(actualizarResumen, 30000);
-    </script>
 </body>
 </html>

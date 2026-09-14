@@ -23,20 +23,20 @@
             </span>
         </a>
 
-        <a href="../../company/login.html" class="btn btn-outline-dark rounded-pill ms-auto"
-        aria-label="Ver tienda" title="Ver tienda">
+        <a href="../../company/catalogo-admin.html" class="btn btn-outline-dark rounded-pill ms-auto"
+        aria-label="Ver catálogo" title="Ver catálogo">
             <i class="bi bi-shop" aria-hidden="true"></i>
-            Ver tienda
+            Ver catálogo
         </a>
 
         <span class="text-dark fs-6 me-n6" aria-label="Tipo de usuario" title="Tipo de usuario">
             Admin Keylupets
         </span>
 
-        <button type="button" class="btn bg-transparent text-danger fs-6">
+        <a href="../../company/catalogo-admin.html" class="btn bg-transparent text-danger fs-6" aria-label="Cerrar sesión" title="Cerrar sesión">
             <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
             𝘊𝘦𝘳𝘳𝘢𝘳 𝘚𝘦𝘴𝘪𝘰𝘯
-        </button>
+        </a>
     </div>
 
     <div class="admin-layout">
@@ -49,7 +49,7 @@
                 <span class="emoji-navegacion" aria-hidden="true">📦</span>
                 <span>Inventario</span>
             </a>
-            <a href="../order/pedidos.html" class="opcion-navegacion">
+            <a href="../pedidos/pedidos.html" class="opcion-navegacion">
                 <span class="emoji-navegacion" aria-hidden="true">🛒</span>
                 <span>Pedidos</span>
             </a>
@@ -67,14 +67,14 @@
             <div class="reportes-encabezado">
                 <h1 class="titulo-panel">Reportes e Historial</h1>
                 <div class="reportes-exportacion" aria-label="Exportar reportes">
-                    <button type="button" class="btn-exportar btn-pdf">
+                    <a href="reportes.html?formato=pdf" class="btn-exportar btn-pdf">
                         <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
                         PDF
-                    </button>
-                    <button type="button" class="btn-exportar btn-excel">
+                    </a>
+                    <a href="reportes.html?formato=excel" class="btn-exportar btn-excel">
                         <i class="bi bi-download" aria-hidden="true"></i>
                         Excel
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -108,8 +108,8 @@
             </section>
 
             <div class="pestanas-reportes" role="tablist" aria-label="Vistas de reportes">
-                <button type="button" class="pestana-reporte activa" role="tab" aria-selected="true">Historial de Ventas</button>
-                <button type="button" class="pestana-reporte" role="tab" aria-selected="false">Movimientos de Stock</button>
+                <a href="#historial-ventas" class="pestana-reporte activa" role="tab" aria-selected="true">Historial de Ventas</a>
+                <a href="#movimientos-stock" class="pestana-reporte" role="tab" aria-selected="false">Movimientos de Stock</a>
             </div>
 
             <section class="tabla-reportes-contenedor" aria-labelledby="titulo-historial-ventas">

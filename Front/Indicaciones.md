@@ -26,3 +26,23 @@ Logo de KeyluPets en el header
 Diseño limpio e intuitivo basado en Bootstrap 5
 Antes de escribir cualquier código dime qué archivo vas a crear, qué va a contener y en qué carpeta va a quedar. Espera mi aprobación.
 Cuando termines cada archivo dime exactamente qué hiciste, qué falta y cuál es el siguiente paso sugerido.
+
+No vamos a manejar JavaScript.
+
+El acceso será un prototipo interactivo construido únicamente con HTML y CSS. El usuario podrá ingresar su correo y, en la parte inferior del formulario, seleccionar mediante una opción declarativa el rol con el que desea entrar:
+
+- Administrador: acceso al panel administrativo y todos los módulos.
+- Empleado: acceso a inventario y pedidos.
+- Usuario: acceso al catálogo, carrito y pedidos.
+
+La selección del rol utilizará enlaces HTML o formularios con rutas declaradas mediante `href` o `formaction`. No se comparará automáticamente el correo ni se implementará autenticación real, sesiones o protección de rutas, porque esas funciones requieren JavaScript o un backend.
+
+El login se organizará de la siguiente manera:
+
+- `pages/company/login.html`: formulario de correo y selección del rol.
+- `assets/landing/css/login.css`: estilos del formulario y sus opciones de acceso.
+
+Cada rol tendrá una pantalla independiente y mostrará únicamente los botones y módulos que correspondan a sus permisos definidos en el HTML.
+
+
+

@@ -19,19 +19,19 @@
             </span>
         </a>
 
-        <a href="../../company/login.html" class="btn btn-outline-dark rounded-pill ms-auto" aria-label="Ver tienda" title="Ver tienda">
+            <a href="../../company/catalogo-admin.html" class="btn btn-outline-dark rounded-pill ms-auto" aria-label="Ver catálogo" title="Ver catálogo">
             <i class="bi bi-shop" aria-hidden="true"></i>
-            Ver tienda
+            Ver catálogo
         </a>
 
         <span class="text-dark fs-6" aria-label="Tipo de usuario" title="Tipo de usuario">
             Admin Keylupets
         </span>
 
-        <button type="button" class="btn bg-transparent text-danger fs-6" aria-label="Cerrar sesión">
+        <a href="../../company/catalogo-admin.html" class="btn bg-transparent text-danger fs-6" aria-label="Cerrar sesión" title="Cerrar sesión">
             <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
             Cerrar sesión
-        </button>
+        </a>
     </header>
 
     <div class="admin-layout">
@@ -44,15 +44,15 @@
                 <span class="emoji-navegacion" aria-hidden="true">📦</span>
                 <span>Inventario</span>
             </a>
-            <a href="../../roles/admin.html#pedidos" class="opcion-navegacion">
+            <a href="../pedidos/pedidos.html" class="opcion-navegacion">
                 <span class="emoji-navegacion" aria-hidden="true">🛒</span>
                 <span>Pedidos</span>
             </a>
-            <a href="../../roles/admin.html#perfiles-usuario" class="opcion-navegacion">
+            <a href="../users/perfiles.html" class="opcion-navegacion">
                 <span class="emoji-navegacion" aria-hidden="true">👤</span>
                 <span>Perfiles de usuario</span>
             </a>
-            <a href="../../roles/admin.html#reportes" class="opcion-navegacion">
+            <a href="../reports/reportes.html" class="opcion-navegacion">
                 <span class="emoji-navegacion" aria-hidden="true">📈</span>
                 <span>Reportes</span>
             </a>
@@ -61,10 +61,6 @@
         <main class="admin-contenido">
             <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
                 <h1 class="titulo-panel mb-0">Gestion de Inventario</h1>
-                <button type="button" id="abrir-modal-producto" class="btn btn-agregar-producto rounded-pill">
-                    <i class="bi bi-plus-lg" aria-hidden="true"></i>
-                    Agregar Producto
-                </button>
             </div>
 
             <section class="tabla-inventario-contenedor" aria-labelledby="titulo-tabla-inventario">
@@ -96,73 +92,5 @@
         </main>
     </div>
 
-    <div id="modal-agregar-producto" class="modal-inventario" aria-hidden="true">
-        <section class="modal-inventario-contenido" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-producto">
-            <div class="modal-inventario-encabezado">
-                <h2 id="titulo-modal-producto">Agregar Nuevo Producto</h2>
-                <button type="button" class="btn-close" data-cerrar-modal aria-label="Cerrar ventana"></button>
-            </div>
-
-            <form id="formulario-producto" class="modal-inventario-cuerpo">
-                <div class="mb-3">
-                    <label for="nombre-producto" class="form-label">Nombre del Producto</label>
-                    <input type="text" id="nombre-producto" class="form-control" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="categoria-producto" class="form-label">Categoría</label>
-                    <select id="categoria-producto" class="form-select" required>
-                        <option value="" selected disabled>Selecciona una categoría</option>
-                        <option value="comida">Comida</option>
-                        <option value="accesorios">Accesorios</option>
-                        <option value="juguetes">Juguetes</option>
-                    </select>
-                </div>
-
-                <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                        <label for="precio-costo" class="form-label">Precio de Costo ($)</label>
-                        <input type="number" id="precio-costo" class="form-control" min="0" step="0.01" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="precio-venta" class="form-label">Precio de Venta ($)</label>
-                        <input type="number" id="precio-venta" class="form-control" min="0" step="0.01" required>
-                    </div>
-                </div>
-
-                <div class="row g-3 mb-3">
-                    <div class="col-md-4">
-                        <label for="stock-actual" class="form-label">Stock Actual</label>
-                        <input type="number" id="stock-actual" class="form-control" min="0" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="stock-minimo" class="form-label">Stock Mínimo</label>
-                        <input type="number" id="stock-minimo" class="form-control" min="0" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="stock-maximo" class="form-label">Stock Máximo</label>
-                        <input type="number" id="stock-maximo" class="form-control" min="0" required>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="descripcion-producto" class="form-label">Descripción</label>
-                    <textarea id="descripcion-producto" class="form-control" rows="3"></textarea>
-                </div>
-
-                <div class="mb-3">
-                    <label for="url-imagen" class="form-label">URL de la Imagen</label>
-                    <input type="url" id="url-imagen" class="form-control" placeholder="https://" required>
-                </div>
-
-                <div class="modal-inventario-acciones">
-                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-cerrar-modal>Cancelar</button>
-                    <button type="submit" class="btn btn-agregar-producto rounded-pill">Agregar Producto</button>
-                </div>
-            </form>
-        </section>
-    </div>
-
-    <script src="../../../assets/landing/js/inventory.js"></script>
 </body>
 </html>

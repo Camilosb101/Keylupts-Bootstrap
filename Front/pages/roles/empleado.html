@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del empleado | KeyluPets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../../assets/landing/css/empleado.css" rel="stylesheet">
+</head>
+<body>
+    <header class="barra-superior">
+        <a href="empleado.html" class="marca" aria-label="Inicio del panel del empleado">
+            <img src="../../assets/landing/img/Icon_Huella.png" alt="Logo de KeyluPets" width="40" height="40">
+            <span>
+                <strong>KeyluPets</strong>
+                <small>Panel del empleado</small>
+            </span>
+        </a>
+        <div class="usuario-superior">
+            <span><i class="bi bi-person-badge" aria-hidden="true"></i> Empleado</span>
+            <a href="../company/login.html" class="boton-salir">Cerrar sesión</a>
+        </div>
+    </header>
+
+    <div class="panel-layout">
+        <aside class="panel-navegacion" aria-label="Navegación del empleado">
+            <a href="empleado.html#inicio" class="opcion-navegacion activa" aria-current="page">
+                <i class="bi bi-grid-1x2" aria-hidden="true"></i>
+                <span>Panel de trabajo</span>
+            </a>
+            <a href="../modules/inventory/inventory.html" class="opcion-navegacion">
+                <i class="bi bi-box-seam" aria-hidden="true"></i>
+                <span>Inventario</span>
+            </a>
+            <a href="../modules/pedidos/pedidos.html" class="opcion-navegacion">
+                <i class="bi bi-bag" aria-hidden="true"></i>
+                <span>Pedidos</span>
+            </a>
+        </aside>
+
+        <main class="contenido-panel" id="inicio">
+            <div class="encabezado-contenido">
+                <div>
+                    <p class="eyebrow">Área operativa</p>
+                    <h1>Panel de trabajo</h1>
+                    <p class="descripcion">Gestiona el inventario y da seguimiento a los pedidos.</p>
+                </div>
+            </div>
+
+            <section class="tarjetas-resumen" aria-label="Resumen del trabajo">
+                <article class="tarjeta-resumen">
+                    <div class="icono-tarjeta azul"><i class="bi bi-box-seam" aria-hidden="true"></i></div>
+                    <div><span>Productos registrados</span><strong>0</strong></div>
+                </article>
+                <article class="tarjeta-resumen">
+                    <div class="icono-tarjeta naranja"><i class="bi bi-bag" aria-hidden="true"></i></div>
+                    <div><span>Pedidos pendientes</span><strong>0</strong></div>
+                </article>
+                <article class="tarjeta-resumen">
+                    <div class="icono-tarjeta rojo"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></div>
+                    <div><span>Alertas de stock</span><strong>0</strong></div>
+                </article>
+            </section>
+
+            <section class="acciones-operativas" aria-labelledby="titulo-acciones">
+                <div class="seccion-encabezado">
+                    <h2 id="titulo-acciones">Accesos rápidos</h2>
+                    <span>Herramientas disponibles</span>
+                </div>
+                <div class="accesos-grid">
+                    <a href="../modules/inventory/inventory.html" class="acceso-operativo">
+                        <i class="bi bi-box-seam" aria-hidden="true"></i>
+                        <span><strong>Revisar inventario</strong><small>Consultar productos y stock</small></span>
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="../modules/pedidos/pedidos.html" class="acceso-operativo">
+                        <i class="bi bi-bag-check" aria-hidden="true"></i>
+                        <span><strong>Gestionar pedidos</strong><small>Consultar pedidos registrados</small></span>
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

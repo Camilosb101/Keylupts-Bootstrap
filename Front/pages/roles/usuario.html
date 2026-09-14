@@ -13,19 +13,53 @@
             <img src="../../assets/landing/img/Icon_Huella.png" alt="Logo de KeyluPets" width="40" height="40">
             <span>KeyluPets</span>
         </a>
-        <nav class="navegacion-usuario" aria-label="Navegación del usuario">
-            <a href="#catalogo">Catálogo</a>
-            <a href="#pedidos">Mis pedidos</a>
-            <a href="../company/login.html" class="boton-salir">Cerrar sesión</a>
-        </nav>
+        <form class="buscador-productos" id="buscador-productos" role="search">
+            <label class="visualmente-oculto" for="buscar-productos">Buscar productos</label>
+            <input type="search" id="buscar-productos" placeholder="Buscar productos..." autocomplete="off">
+            <button type="submit" aria-label="Buscar productos">
+                <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+        </form>
+        <button type="button" class="boton-perfil" id="abrir-menu" aria-label="Abrir menú de perfil" aria-expanded="false" aria-controls="menu-perfil">
+            <i class="bi bi-person-circle" aria-hidden="true"></i>
+            <span>Perfil</span>
+        </button>
     </header>
+
+    <aside class="menu-perfil" id="menu-perfil" aria-label="Menú de perfil">
+        <div class="menu-perfil-header">
+            <div>
+                <p class="eyebrow">Mi cuenta</p>
+                <h2>Perfil</h2>
+            </div>
+            <button type="button" class="cerrar-menu" id="cerrar-menu" aria-label="Cerrar menú de perfil">
+                <i class="bi bi-x-lg" aria-hidden="true"></i>
+            </button>
+        </div>
+        <nav class="navegacion-usuario" aria-label="Navegación del usuario">
+            <button type="button" class="menu-opcion"><i class="bi bi-person-vcard" aria-hidden="true"></i>Mi perfil</button>
+            <button type="button" class="menu-opcion"><i class="bi bi-heart" aria-hidden="true"></i>Mis mascotas</button>
+            <a href="#catalogo"><i class="bi bi-grid-1x2" aria-hidden="true"></i>Catálogo</a>
+            <a href="#pedidos"><i class="bi bi-bag-check" aria-hidden="true"></i>Mis pedidos</a>
+            <a href="../company/login.html" class="boton-salir"><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Cerrar sesión</a>
+        </nav>
+    </aside>
+    <button type="button" class="capa-menu" id="capa-menu" aria-label="Cerrar menú de perfil"></button>
+
+    <nav class="categorias-usuario" aria-label="Categorías del catálogo">
+        <a href="#catalogo" class="activo">Todo</a>
+        <a href="#comida">Comida</a>
+        <a href="#accesorios">Accesorios</a>
+        <a href="#juguetes">Juguetes</a>
+        <a href="#salud">Salud</a>
+    </nav>
 
     <main>
         <section class="hero-usuario" id="catalogo">
             <div>
                 <p class="eyebrow">Catálogo KeyluPets</p>
                 <h1>Todo para el cuidado de tus mascotas</h1>
-                <p>Explora nuestros productos y agrega tus favoritos al carrito.</p>
+                <p>Explora productos para perros, gatos y pequeños animales en una sola tienda.</p>
             </div>
             <a href="#productos" class="boton-hero">Ver productos <i class="bi bi-arrow-down" aria-hidden="true"></i></a>
         </section>
@@ -36,44 +70,96 @@
                     <p class="eyebrow">Disponible para ti</p>
                     <h2 id="titulo-productos">Productos destacados</h2>
                 </div>
-                <a href="#carrito" class="carrito-enlace"><i class="bi bi-cart3" aria-hidden="true"></i> Carrito <span>0</span></a>
             </div>
 
             <div class="productos-grid">
-                <article class="producto-card">
+                <article class="producto-card" id="comida">
                     <img src="../../assets/landing/img/alimento-gato.jpg" alt="Alimento para gato">
                     <div class="producto-contenido">
                         <span class="categoria">Comida</span>
                         <h3>Alimento para gato</h3>
-                        <p>Producto disponible para tu mascota.</p>
-                        <div class="producto-pie"><strong>Consultar precio</strong><a href="#carrito" aria-label="Agregar alimento para gato al carrito"><i class="bi bi-plus-lg" aria-hidden="true"></i></a></div>
+                        <p>Nutrición completa para mantenerlo activo.</p>
+                        <div class="producto-pie">
+                            <strong>$18.500</strong>
+                            <button type="button" class="agregar-carrito" data-product="Alimento para gato" data-price="18500" aria-label="Agregar alimento para gato al carrito">
+                                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                 </article>
-                <article class="producto-card">
+
+                <article class="producto-card" id="comida-perro">
                     <img src="../../assets/landing/img/alimento-perro.jpg" alt="Alimento para perro">
                     <div class="producto-contenido">
                         <span class="categoria">Comida</span>
                         <h3>Alimento para perro</h3>
-                        <p>Producto disponible para tu mascota.</p>
-                        <div class="producto-pie"><strong>Consultar precio</strong><a href="#carrito" aria-label="Agregar alimento para perro al carrito"><i class="bi bi-plus-lg" aria-hidden="true"></i></a></div>
+                        <p>Comida balanceada para perros adultos.</p>
+                        <div class="producto-pie">
+                            <strong>$24.900</strong>
+                            <button type="button" class="agregar-carrito" data-product="Alimento para perro" data-price="24900" aria-label="Agregar alimento para perro al carrito">
+                                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                 </article>
-                <article class="producto-card">
-                    <img src="../../assets/landing/img/comida-gato.jpg" alt="Comida para gato">
+
+                <article class="producto-card" id="accesorios">
+                    <img src="../../assets/landing/img/comida-gato.jpg" alt="Collar para gato">
                     <div class="producto-contenido">
-                        <span class="categoria">Comida</span>
-                        <h3>Comida para gato</h3>
-                        <p>Producto disponible para tu mascota.</p>
-                        <div class="producto-pie"><strong>Consultar precio</strong><a href="#carrito" aria-label="Agregar comida para gato al carrito"><i class="bi bi-plus-lg" aria-hidden="true"></i></a></div>
+                        <span class="categoria">Accesorios</span>
+                        <h3>Collar para gato</h3>
+                        <p>Diseño cómodo y resistente para diario.</p>
+                        <div class="producto-pie">
+                            <strong>$12.300</strong>
+                            <button type="button" class="agregar-carrito" data-product="Collar para gato" data-price="12300" aria-label="Agregar collar para gato al carrito">
+                                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                 </article>
-                <article class="producto-card">
-                    <img src="../../assets/landing/img/snacks-perro.jpeg" alt="Snacks para perro">
+
+                <article class="producto-card" id="juguetes">
+                    <img src="../../assets/landing/img/snacks-perro.jpeg" alt="Juguete para perro">
                     <div class="producto-contenido">
-                        <span class="categoria">Snacks</span>
-                        <h3>Snacks para perro</h3>
-                        <p>Producto disponible para tu mascota.</p>
-                        <div class="producto-pie"><strong>Consultar precio</strong><a href="#carrito" aria-label="Agregar snacks para perro al carrito"><i class="bi bi-plus-lg" aria-hidden="true"></i></a></div>
+                        <span class="categoria">Juguetes</span>
+                        <h3>Pelota interactiva</h3>
+                        <p>Ideal para actividad y entretenimiento.</p>
+                        <div class="producto-pie">
+                            <strong>$9.800</strong>
+                            <button type="button" class="agregar-carrito" data-product="Pelota interactiva" data-price="9800" aria-label="Agregar pelota interactiva al carrito">
+                                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="producto-card" id="salud">
+                    <img src="../../assets/landing/img/alimento-gato.jpg" alt="Suplemento para salud de mascota">
+                    <div class="producto-contenido">
+                        <span class="categoria">Salud</span>
+                        <h3>Vitamina para mascota</h3>
+                        <p>Complemento para bienestar y energía.</p>
+                        <div class="producto-pie">
+                            <strong>$15.700</strong>
+                            <button type="button" class="agregar-carrito" data-product="Vitamina para mascota" data-price="15700" aria-label="Agregar vitamina para mascota al carrito">
+                                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="producto-card" id="accesorios-2">
+                    <img src="../../assets/landing/img/alimento-perro.jpg" alt="Cama para perro">
+                    <div class="producto-contenido">
+                        <span class="categoria">Accesorios</span>
+                        <h3>Cama para perro</h3>
+                        <p>Confort para descanso y relajación.</p>
+                        <div class="producto-pie">
+                            <strong>$32.400</strong>
+                            <button type="button" class="agregar-carrito" data-product="Cama para perro" data-price="32400" aria-label="Agregar cama para perro al carrito">
+                                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -86,5 +172,33 @@
             <i class="bi bi-bag-x" aria-hidden="true"></i>
         </section>
     </main>
+
+    <aside class="panel-carrito" aria-label="Carrito de compras">
+        <div class="carrito-header">
+            <div>
+                <p class="eyebrow">Mi selección</p>
+                <h3>Carrito</h3>
+            </div>
+            <button type="button" class="cerrar-carrito" aria-label="Cerrar carrito">Cerrar</button>
+        </div>
+
+        <ul class="lista-carrito" id="lista-carrito"></ul>
+
+        <div class="carrito-footer">
+            <div>
+                <span>Total</span>
+                <strong>$47.000</strong>
+            </div>
+            <a href="#pedidos" class="boton-confirmar">Continuar</a>
+        </div>
+    </aside>
+
+    <button type="button" class="boton-carrito-flotante" id="abrir-carrito" aria-label="Abrir carrito" aria-expanded="false">
+        <i class="bi bi-cart3" aria-hidden="true"></i>
+        <span>Carrito</span>
+        <span class="contador" id="contador-carrito">0</span>
+    </button>
+
+    <script src="../../assets/landing/js/usuario.js"></script>
 </body>
 </html>

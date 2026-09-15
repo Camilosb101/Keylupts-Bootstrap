@@ -12,6 +12,13 @@ const menuBackdrop = document.getElementById('capa-menu');
 const searchForm = document.getElementById('buscador-productos');
 const searchInput = document.getElementById('buscar-productos');
 const productCards = document.querySelectorAll('.producto-card');
+const continueButton = document.getElementById('continuar-pago');
+const paymentModal = document.getElementById('modal-pago');
+const closePaymentButton = document.getElementById('cerrar-pago');
+const paymentForm = document.getElementById('formulario-pago');
+const paymentMethod = document.getElementById('medio-pago');
+const cardDetails = document.getElementById('datos-tarjeta');
+const paymentTotal = document.getElementById('total-pago');
 
 function formatCurrency(value) {
     return new Intl.NumberFormat('es-CL', {
@@ -30,6 +37,11 @@ function setProfileMenuOpen(isOpen) {
     profileMenu.classList.toggle('is-open', isOpen);
     menuBackdrop.classList.toggle('is-open', isOpen);
     openMenuButton.setAttribute('aria-expanded', String(isOpen));
+}
+
+function setPaymentModalOpen(isOpen) {
+    paymentModal.classList.toggle('is-open', isOpen);
+    paymentModal.setAttribute('aria-hidden', String(!isOpen));
 }
 
 function renderCart() {
@@ -79,6 +91,35 @@ searchForm.addEventListener('submit', (event) => {
 
 searchInput.addEventListener('input', filterProducts);
 
+continueButton.addEventListener('click', () => {
+    if (cart.length === 0) {
+        window.alert('Agrega al menos un producto antes de continuar.');
+        return;
+    }
+
+    paymentTotal.textContent = formatCurrency(cart.reduce((sum, item) => sum + item.price, 0));
+    setPaymentModalOpen(true);
+});
+
+closePaymentButton.addEventListener('click', () => {
+    setPaymentModalOpen(false);
+});
+
+paymentModal.addEventListener('click', (event) => {
+    if (event.target === paymentModal) setPaymentModalOpen(false);
+});
+
+paymentMethod.addEventListener('change', () => {
+    cardDetails.hidden = paymentMethod.value !== 'tarjeta';
+});
+
+paymentForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.alert('Pago simulado recibido. Tu pedido ha sido registrado en el prototipo.');
+    setPaymentModalOpen(false);
+    setCartOpen(false);
+});
+
 openCartButton.addEventListener('click', () => {
     const isOpen = !cartPanel.classList.contains('is-open');
     setCartOpen(isOpen);
@@ -118,7 +159,6 @@ document.querySelectorAll('.agregar-carrito').forEach((button) => {
         }
 
         renderCart();
-        setCartOpen(true);
     });
 });
 

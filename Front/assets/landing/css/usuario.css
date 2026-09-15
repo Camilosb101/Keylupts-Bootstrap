@@ -402,12 +402,77 @@ body {
     justify-content: center;
     min-height: 42px;
     padding: 0.7rem 1rem;
+    border: 0;
     border-radius: 999px;
     background: var(--color-texto);
     color: white;
     font-weight: 700;
-    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
 }
+.boton-confirmar:hover { background: var(--color-naranja); }
+
+.modal-pago {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: rgba(37, 48, 68, 0.42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+.modal-pago.is-open { opacity: 1; pointer-events: auto; }
+.modal-pago-contenido {
+    width: min(100%, 500px);
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border: 1px solid var(--color-borde);
+    border-radius: 1.2rem;
+    background: white;
+    box-shadow: 0 22px 55px rgba(37, 48, 68, 0.22);
+}
+.modal-pago-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+.modal-pago-header h2 { margin: 0; font-size: 1.55rem; }
+.cerrar-pago {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    border: 1px solid var(--color-borde);
+    border-radius: 50%;
+    background: white;
+    color: var(--color-secundario);
+    cursor: pointer;
+}
+.cerrar-pago:hover { border-color: var(--color-naranja); color: var(--color-naranja); }
+.formulario-pago { display: grid; gap: 0.55rem; }
+.formulario-pago label { color: var(--color-texto); font-size: 0.85rem; font-weight: 700; }
+.formulario-pago input, .formulario-pago select {
+    width: 100%;
+    min-height: 44px;
+    margin-bottom: 0.5rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 0.65rem;
+    background: #f8fafc;
+    color: var(--color-texto);
+    font: inherit;
+}
+.formulario-pago input:focus, .formulario-pago select:focus { border-color: var(--color-azul); outline: 3px solid rgba(40, 124, 255, 0.12); }
+.datos-tarjeta { display: grid; gap: 0.55rem; }
+.campos-tarjeta { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.campos-tarjeta > div { display: grid; gap: 0.55rem; }
+.resumen-pago { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0.5rem; padding: 0.9rem; border-radius: 0.75rem; background: #fff0e2; }
+.resumen-pago span { color: var(--color-secundario); font-size: 0.85rem; }
+.resumen-pago strong { color: var(--color-naranja); font-size: 1.15rem; }
+.boton-pagar { min-height: 46px; margin-top: 0.4rem; border: 0; border-radius: 999px; background: var(--color-naranja); color: white; font: inherit; font-weight: 800; cursor: pointer; }
+.boton-pagar:hover { background: #d95400; }
+.nota-pago { margin: 0.25rem 0 0; color: var(--color-secundario); font-size: 0.78rem; text-align: center; }
+.nota-pago i { color: var(--color-azul); }
 
 @media (max-width: 1000px) { .productos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 700px) {

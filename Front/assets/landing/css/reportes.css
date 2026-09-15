@@ -35,11 +35,7 @@
     background-color: #00bf55;
 }
 
-.resumen-reportes {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-}
+/* El grid de tarjetas ahora lo maneja Bootstrap (row row-cols-*). */
 
 .tarjeta-reporte {
     min-height: 170px;
@@ -177,9 +173,6 @@
         flex-direction: column;
     }
 
-    .resumen-reportes {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 576px) {

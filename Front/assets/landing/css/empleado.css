@@ -88,12 +88,8 @@ body {
 .encabezado-contenido h1 { margin: 0; font-size: 2.25rem; }
 .descripcion { margin: 0.5rem 0 0; color: var(--color-secundario); }
 
-.tarjetas-resumen {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-    margin-top: 2rem;
-}
+/* El grid de tarjetas ahora lo maneja Bootstrap (row row-cols-*). */
+.tarjetas-resumen { margin-top: 2rem; }
 
 .tarjeta-resumen {
     display: flex;
@@ -117,7 +113,8 @@ body {
 .seccion-encabezado { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
 .seccion-encabezado h2 { margin: 0; font-size: 1.4rem; }
 .seccion-encabezado span { color: var(--color-secundario); font-size: 0.9rem; }
-.accesos-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+/* El grid de accesos ahora lo maneja Bootstrap (row row-cols-*). */
+.accesos-grid { margin-top: 1.25rem; }
 .acceso-operativo { display: flex; align-items: center; gap: 0.9rem; padding: 1rem; border: 1px solid var(--color-borde); border-radius: 0.75rem; color: var(--color-texto); text-decoration: none; }
 .acceso-operativo:hover { border-color: var(--color-azul); background: #f8fbff; }
 .acceso-operativo > i:first-child { color: var(--color-azul); font-size: 1.5rem; }
@@ -129,7 +126,7 @@ body {
     .panel-navegacion { display: flex; width: 100%; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--color-borde); }
     .opcion-navegacion { min-width: max-content; }
     .contenido-panel { padding: 1.25rem; }
-    .tarjetas-resumen, .accesos-grid { grid-template-columns: 1fr; }
+
 }
 
 @media (max-width: 576px) {

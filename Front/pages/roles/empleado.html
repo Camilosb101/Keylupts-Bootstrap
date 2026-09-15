@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel del empleado | KeyluPets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="../../assets/landing/css/empleado.css" rel="stylesheet">
 </head>
@@ -28,6 +29,10 @@
                 <i class="bi bi-grid-1x2" aria-hidden="true"></i>
                 <span>Panel de trabajo</span>
             </a>
+            <a href="catalogo-empleado.html" class="opcion-navegacion">
+                <i class="bi bi-shop" aria-hidden="true"></i>
+                <span>Catálogo</span>
+            </a>
             <a href="../modules/inventory/inventory.html" class="opcion-navegacion">
                 <i class="bi bi-box-seam" aria-hidden="true"></i>
                 <span>Inventario</span>
@@ -47,19 +52,25 @@
                 </div>
             </div>
 
-            <section class="tarjetas-resumen" aria-label="Resumen del trabajo">
-                <article class="tarjeta-resumen">
-                    <div class="icono-tarjeta azul"><i class="bi bi-box-seam" aria-hidden="true"></i></div>
-                    <div><span>Productos registrados</span><strong>0</strong></div>
-                </article>
-                <article class="tarjeta-resumen">
-                    <div class="icono-tarjeta naranja"><i class="bi bi-bag" aria-hidden="true"></i></div>
-                    <div><span>Pedidos pendientes</span><strong>0</strong></div>
-                </article>
-                <article class="tarjeta-resumen">
-                    <div class="icono-tarjeta rojo"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></div>
-                    <div><span>Alertas de stock</span><strong>0</strong></div>
-                </article>
+            <section class="tarjetas-resumen row row-cols-1 row-cols-md-3 g-4" aria-label="Resumen del trabajo">
+                <div class="col">
+                    <article class="tarjeta-resumen h-100">
+                        <div class="icono-tarjeta azul"><i class="bi bi-box-seam" aria-hidden="true"></i></div>
+                        <div><span>Productos registrados</span><strong>0</strong></div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="tarjeta-resumen h-100">
+                        <div class="icono-tarjeta naranja"><i class="bi bi-bag" aria-hidden="true"></i></div>
+                        <div><span>Pedidos pendientes</span><strong>0</strong></div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="tarjeta-resumen h-100">
+                        <div class="icono-tarjeta rojo"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></div>
+                        <div><span>Alertas de stock</span><strong>0</strong></div>
+                    </article>
+                </div>
             </section>
 
             <section class="acciones-operativas" aria-labelledby="titulo-acciones">
@@ -67,20 +78,33 @@
                     <h2 id="titulo-acciones">Accesos rápidos</h2>
                     <span>Herramientas disponibles</span>
                 </div>
-                <div class="accesos-grid">
-                    <a href="../modules/inventory/inventory.html" class="acceso-operativo">
-                        <i class="bi bi-box-seam" aria-hidden="true"></i>
-                        <span><strong>Revisar inventario</strong><small>Consultar productos y stock</small></span>
-                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                    </a>
-                    <a href="../modules/pedidos/pedidos.html" class="acceso-operativo">
-                        <i class="bi bi-bag-check" aria-hidden="true"></i>
-                        <span><strong>Gestionar pedidos</strong><small>Consultar pedidos registrados</small></span>
-                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                    </a>
+                <div class="accesos-grid row row-cols-1 row-cols-md-2 g-3">
+                    <div class="col">
+                        <a href="catalogo-empleado.html" class="acceso-operativo h-100">
+                            <i class="bi bi-shop" aria-hidden="true"></i>
+                            <span><strong>Ver catálogo</strong><small>Explorar productos disponibles</small></span>
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="../modules/inventory/inventory.html" class="acceso-operativo h-100">
+                            <i class="bi bi-box-seam" aria-hidden="true"></i>
+                            <span><strong>Revisar inventario</strong><small>Consultar productos y stock</small></span>
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="../modules/pedidos/pedidos.html" class="acceso-operativo h-100">
+                            <i class="bi bi-bag-check" aria-hidden="true"></i>
+                            <span><strong>Gestionar pedidos</strong><small>Consultar pedidos registrados</small></span>
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

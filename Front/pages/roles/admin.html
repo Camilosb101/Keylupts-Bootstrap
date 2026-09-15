@@ -2,46 +2,41 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Admin | KeyluPets</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="../../assets/landing/css/admin.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar barra-superior sticky-top w-100 bg-white d-flex justify-content-start align-items-center gap-2 p-2">
+    <header class="navbar barra-superior sticky-top w-100 bg-white d-flex justify-content-start align-items-center gap-2 p-2">
         <a href="../company/catalogo-admin.html" class="d-flex align-items-center gap-2 text-dark text-decoration-none"
         aria-label="Inicio" title="Inicio">
-            <img src="../../assets/landing/img/Icon_Huella.png" alt="Logo"
+            <img src="../../assets/landing/img/Icon_Huella.png" alt="Logo de KeyluPets"
             width="40"
             height="40"
             class="d-block">
             <span class="d-flex flex-column align-items-start">
-                <span>𝗞𝗲𝘆𝗹𝘂𝗽𝗲𝘁𝘀</span>
+                <span class="fw-bold">KeyluPets</span>
                 <small class="text-secondary">Panel administrativo</small>
             </span>
         </a>
 
         <a href="../company/catalogo-admin.html" class="btn btn-outline-dark rounded-pill ms-auto"
         aria-label="Ver catálogo" title="Ver catálogo">
-        <i class="bi bi-shop" aria-hidden="true"></i>
+            <i class="bi bi-shop" aria-hidden="true"></i>
             Ver catálogo
         </a>
 
-
-
-
-        <span class="text-dark fs-6 me-n6" aria-label="Tipo de usuario" title="Tipo de usuario">
+        <span class="text-dark fs-6" aria-label="Tipo de usuario" title="Tipo de usuario">
             Admin Keylupets
         </span>
 
-
-        <a href="../company/catalogo-admin.html" class="btn bg-transparent text-danger fs-6" aria-label="Cerrar sesión" title="Cerrar sesión">
+        <a href="../company/login.html" class="btn bg-transparent text-danger fs-6" aria-label="Cerrar sesión" title="Cerrar sesión">
             <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
-            𝘊𝘦𝘳𝘳𝘢𝘳 𝘚𝘦𝘴𝘪𝘰𝘯
+            Cerrar Sesión
         </a>
-
-        
-    </div>
+    </header>
 
     <div class="admin-layout">
         <aside class="panel-navegacion" aria-label="Navegacion administrativa">
@@ -70,38 +65,46 @@
         <main class="admin-contenido" id="panel-control">
             <h1 class="titulo-panel">Panel Principal</h1>
 
-            <section class="resumen-panel" aria-label="Resumen del inventario y pedidos">
-                <article class="tarjeta-resumen">
-                    <div class="resumen-encabezado">
-                        <h2>Total Productos</h2>
-                        <i class="bi bi-box-seam icono-productos" aria-hidden="true"></i>
-                    </div>
-                    <strong class="resumen-numero" id="total-productos">0</strong>
-                </article>
+            <section class="resumen-panel row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4" aria-label="Resumen del inventario y pedidos">
+                <div class="col">
+                    <article class="tarjeta-resumen h-100">
+                        <div class="resumen-encabezado">
+                            <h2>Total Productos</h2>
+                            <i class="bi bi-box-seam icono-productos" aria-hidden="true"></i>
+                        </div>
+                        <strong class="resumen-numero" id="total-productos">0</strong>
+                    </article>
+                </div>
 
-                <article class="tarjeta-resumen">
-                    <div class="resumen-encabezado">
-                        <h2>Pedidos Pendientes</h2>
-                        <i class="bi bi-bag icono-pedidos" aria-hidden="true"></i>
-                    </div>
-                    <strong class="resumen-numero" id="pedidos-pendientes">0</strong>
-                </article>
+                <div class="col">
+                    <article class="tarjeta-resumen h-100">
+                        <div class="resumen-encabezado">
+                            <h2>Pedidos Pendientes</h2>
+                            <i class="bi bi-bag icono-pedidos" aria-hidden="true"></i>
+                        </div>
+                        <strong class="resumen-numero" id="pedidos-pendientes">0</strong>
+                    </article>
+                </div>
 
-                <article class="tarjeta-resumen tarjeta-alerta">
-                    <div class="resumen-encabezado">
-                        <h2>Stock Bajo</h2>
-                        <i class="bi bi-exclamation-triangle icono-stock" aria-hidden="true"></i>
-                    </div>
-                    <strong class="resumen-numero" id="stock-bajo">0</strong>
-                </article>
+                <div class="col">
+                    <article class="tarjeta-resumen tarjeta-alerta h-100">
+                        <div class="resumen-encabezado">
+                            <h2>Stock Bajo</h2>
+                            <i class="bi bi-exclamation-triangle icono-stock" aria-hidden="true"></i>
+                        </div>
+                        <strong class="resumen-numero" id="stock-bajo">0</strong>
+                    </article>
+                </div>
 
-                <article class="tarjeta-resumen">
-                    <div class="resumen-encabezado">
-                        <h2>Por Vencer Pronto</h2>
-                        <i class="bi bi-clock icono-vencimiento" aria-hidden="true"></i>
-                    </div>
-                    <strong class="resumen-numero" id="por-vencer">0</strong>
-                </article>
+                <div class="col">
+                    <article class="tarjeta-resumen h-100">
+                        <div class="resumen-encabezado">
+                            <h2>Por Vencer Pronto</h2>
+                            <i class="bi bi-clock icono-vencimiento" aria-hidden="true"></i>
+                        </div>
+                        <strong class="resumen-numero" id="por-vencer">0</strong>
+                    </article>
+                </div>
             </section>
 
             <section class="alerta-stock" role="alert">
@@ -118,5 +121,6 @@
         </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

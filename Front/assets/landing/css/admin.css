@@ -59,11 +59,7 @@
     font-weight: 700;
 }
 
-.resumen-panel {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.25rem;
-}
+/* El grid de tarjetas ahora lo maneja Bootstrap (row row-cols-*). */
 
 .tarjeta-resumen {
     min-height: 165px;
@@ -188,9 +184,5 @@
 
     .titulo-panel {
         font-size: 1.75rem;
-    }
-
-    .resumen-panel {
-        grid-template-columns: 1fr;
     }
 }

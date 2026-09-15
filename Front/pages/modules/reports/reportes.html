@@ -18,7 +18,7 @@
             height="40"
             class="d-block">
             <span class="d-flex flex-column align-items-start">
-                <span>𝗞𝗲𝘆𝗹𝘂𝗽𝗲𝘁𝘀</span>
+                <span class="fw-bold">KeyluPets</span>
                 <small class="text-secondary">Panel administrativo</small>
             </span>
         </a>
@@ -29,13 +29,13 @@
             Ver catálogo
         </a>
 
-        <span class="text-dark fs-6 me-n6" aria-label="Tipo de usuario" title="Tipo de usuario">
+        <span class="text-dark fs-6" aria-label="Tipo de usuario" title="Tipo de usuario">
             Admin Keylupets
         </span>
 
-        <a href="../../company/catalogo-admin.html" class="btn bg-transparent text-danger fs-6" aria-label="Cerrar sesión" title="Cerrar sesión">
+        <a href="../../company/login.html" class="btn bg-transparent text-danger fs-6" aria-label="Cerrar sesión" title="Cerrar sesión">
             <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
-            𝘊𝘦𝘳𝘳𝘢𝘳 𝘚𝘦𝘴𝘪𝘰𝘯
+            Cerrar Sesión
         </a>
     </div>
 
@@ -78,33 +78,39 @@
                 </div>
             </div>
 
-            <section class="resumen-reportes" aria-label="Resumen de reportes">
-                <article class="tarjeta-reporte">
-                    <div class="tarjeta-reporte-encabezado">
-                        <span>Ventas Totales</span>
-                        <i class="bi bi-graph-up-arrow icono-ventas" aria-hidden="true"></i>
-                    </div>
-                    <strong>--</strong>
-                    <small>Sin datos registrados</small>
-                </article>
+            <section class="resumen-reportes row row-cols-1 row-cols-md-3 g-4" aria-label="Resumen de reportes">
+                <div class="col">
+                    <article class="tarjeta-reporte h-100">
+                        <div class="tarjeta-reporte-encabezado">
+                            <span>Ventas Totales</span>
+                            <i class="bi bi-graph-up-arrow icono-ventas" aria-hidden="true"></i>
+                        </div>
+                        <strong>--</strong>
+                        <small>Sin datos registrados</small>
+                    </article>
+                </div>
 
-                <article class="tarjeta-reporte">
-                    <div class="tarjeta-reporte-encabezado">
-                        <span>Entradas de Stock</span>
-                        <i class="bi bi-arrow-down-right icono-entradas" aria-hidden="true"></i>
-                    </div>
-                    <strong>--</strong>
-                    <small>Sin datos registrados</small>
-                </article>
+                <div class="col">
+                    <article class="tarjeta-reporte h-100">
+                        <div class="tarjeta-reporte-encabezado">
+                            <span>Entradas de Stock</span>
+                            <i class="bi bi-arrow-down-right icono-entradas" aria-hidden="true"></i>
+                        </div>
+                        <strong>--</strong>
+                        <small>Sin datos registrados</small>
+                    </article>
+                </div>
 
-                <article class="tarjeta-reporte">
-                    <div class="tarjeta-reporte-encabezado">
-                        <span>Salidas de Stock</span>
-                        <i class="bi bi-arrow-up-right icono-salidas" aria-hidden="true"></i>
-                    </div>
-                    <strong>--</strong>
-                    <small>Sin datos registrados</small>
-                </article>
+                <div class="col">
+                    <article class="tarjeta-reporte h-100">
+                        <div class="tarjeta-reporte-encabezado">
+                            <span>Salidas de Stock</span>
+                            <i class="bi bi-arrow-up-right icono-salidas" aria-hidden="true"></i>
+                        </div>
+                        <strong>--</strong>
+                        <small>Sin datos registrados</small>
+                    </article>
+                </div>
             </section>
 
             <div class="pestanas-reportes" role="tablist" aria-label="Vistas de reportes">
@@ -115,7 +121,7 @@
             <section class="tabla-reportes-contenedor" aria-labelledby="titulo-historial-ventas">
                 <h2 id="titulo-historial-ventas" class="visually-hidden">Historial de Ventas</h2>
                 <div class="tabla-reportes-scroll">
-                    <table class="tabla-reportes">
+                    <table class="tabla-reportes table align-middle mb-0">
                         <thead>
                             <tr>
                                 <th scope="col">ID Pedido</th>
@@ -136,5 +142,7 @@
             </section>
         </main>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

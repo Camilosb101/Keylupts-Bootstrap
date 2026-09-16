@@ -185,6 +185,42 @@
         </section>
     </main>
 
+    <div class="modal-pago" id="modal-editar" role="dialog" aria-modal="true" aria-labelledby="titulo-editar" aria-hidden="true">
+        <div class="modal-pago-contenido">
+            <div class="modal-pago-header">
+                <div>
+                    <p class="eyebrow">Gestión de catálogo</p>
+                    <h2 id="titulo-editar">Editar producto</h2>
+                </div>
+                <button type="button" class="cerrar-pago" id="cerrar-editar" aria-label="Cerrar edición">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <form class="formulario-pago" id="formulario-editar">
+                <label for="editar-nombre">Nombre del producto</label>
+                <input type="text" id="editar-nombre" placeholder="Nombre del producto" required>
+
+                <label for="editar-categoria">Categoría</label>
+                <select id="editar-categoria" required>
+                    <option value="Comida">Comida</option>
+                    <option value="Accesorios">Accesorios</option>
+                    <option value="Juguetes">Juguetes</option>
+                    <option value="Salud">Salud</option>
+                </select>
+
+                <label for="editar-descripcion">Descripción</label>
+                <input type="text" id="editar-descripcion" placeholder="Descripción breve" required>
+
+                <label for="editar-precio">Precio (CLP)</label>
+                <input type="number" id="editar-precio" inputmode="numeric" min="0" step="100" placeholder="0" required>
+
+                <button type="submit" class="boton-pagar">Guardar cambios</button>
+                <p class="nota-pago"><i class="bi bi-info-circle" aria-hidden="true"></i> Cambios guardados en el prototipo (no persisten al recargar).</p>
+            </form>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/landing/js/catalogo-gestion.js"></script>
 </body>
